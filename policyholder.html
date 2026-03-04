@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Policyholder Details — Velantrix Insurance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="step-page">
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner container">
+      <a href="index.html" class="navbar__logo">
+        <span class="logo-mark">V</span>
+        Velantrix Insurance
+      </a>
+      <nav class="navbar__links" id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#pricing">Plans</a>
+        <a href="index.html#claims">Claims</a>
+      </nav>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- STEP PROGRESS -->
+  <div class="step-progress">
+    <ul class="step-progress__list">
+      <li class="step-item step-item--active">
+        <div class="step-dot">1</div>
+        <span class="step-label">Policyholder</span>
+      </li>
+      <li class="step-item">
+        <div class="step-dot">2</div>
+        <span class="step-label">Coverage</span>
+      </li>
+      <li class="step-item">
+        <div class="step-dot">3</div>
+        <span class="step-label">Premium &amp; Pay</span>
+      </li>
+      <li class="step-item">
+        <div class="step-dot">4</div>
+        <span class="step-label">Policy Issued</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- STEP CONTENT -->
+  <div class="step-wrap">
+    <div class="step-container">
+
+      <div class="step-header">
+        <p class="section-eyebrow">Step 1 of 4</p>
+        <h1 class="section-title">Policyholder Details</h1>
+      </div>
+
+      <div class="step-body">
+        <form id="step1-form" novalidate>
+
+          <!-- ===== SECTION A: Personal Information ===== -->
+          <div class="fieldset-group">
+            <div class="fieldset-group__label">
+              <span class="fieldset-icon">&#128100;</span>
+              Personal Information
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full_name">Full Name <span class="required">*</span></label>
+                <input type="text" id="full_name" placeholder="Jane Smith" autocomplete="name" />
+                <span class="field-error" id="err-full_name"></span>
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth <span class="required">*</span></label>
+                <input type="date" id="dob" autocomplete="bday" />
+                <span class="field-error" id="err-dob"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" placeholder="jane@company.com" autocomplete="email" />
+                <span class="field-error" id="err-email"></span>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="text" id="phone" placeholder="(555) 123-4567" maxlength="14" autocomplete="tel" />
+                <span class="field-error" id="err-phone"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SECTION B: Home Address ===== -->
+          <div class="fieldset-group">
+            <div class="fieldset-group__label">
+              <span class="fieldset-icon">&#127968;</span>
+              Home Address
+            </div>
+            <div class="form-group">
+              <label for="street">Street Address <span class="required">*</span></label>
+              <input type="text" id="street" placeholder="123 Main Street, Apt 4B" autocomplete="street-address" />
+              <span class="field-error" id="err-street"></span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City <span class="required">*</span></label>
+                <input type="text" id="city" placeholder="New York" autocomplete="address-level2" />
+                <span class="field-error" id="err-city"></span>
+              </div>
+              <div class="form-group">
+                <label for="state">State <span class="required">*</span></label>
+                <select id="state" autocomplete="address-level1">
+                  <option value="">— Select state —</option>
+                  <option>Alabama</option><option>Alaska</option><option>Arizona</option>
+                  <option>Arkansas</option><option>California</option><option>Colorado</option>
+                  <option>Connecticut</option><option>Delaware</option><option>Florida</option>
+                  <option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+                  <option>Illinois</option><option>Indiana</option><option>Iowa</option>
+                  <option>Kansas</option><option>Kentucky</option><option>Louisiana</option>
+                  <option>Maine</option><option>Maryland</option><option>Massachusetts</option>
+                  <option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+                  <option>Missouri</option><option>Montana</option><option>Nebraska</option>
+                  <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
+                  <option>New Mexico</option><option>New York</option><option>North Carolina</option>
+                  <option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+                  <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option>
+                  <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option>
+                  <option>Texas</option><option>Utah</option><option>Vermont</option>
+                  <option>Virginia</option><option>Washington</option><option>West Virginia</option>
+                  <option>Wisconsin</option><option>Wyoming</option>
+                </select>
+                <span class="field-error" id="err-state"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="zip">ZIP Code <span class="required">*</span></label>
+                <input type="text" id="zip" placeholder="10001" maxlength="5" autocomplete="postal-code" />
+                <span class="field-error" id="err-zip"></span>
+              </div>
+              <div class="form-group">
+                <!-- spacer -->
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SECTION C: Employment ===== -->
+          <div class="fieldset-group">
+            <div class="fieldset-group__label">
+              <span class="fieldset-icon">&#128188;</span>
+              Employment
+            </div>
+            <div class="form-group">
+              <label>Employment Status <span class="required">*</span></label>
+              <div class="radio-group" id="employment-status-group">
+                <label class="radio-option">
+                  <input type="radio" name="employment_status" value="Employed" /> Employed
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="employment_status" value="Self-Employed" /> Self-Employed
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="employment_status" value="Retired" /> Retired
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="employment_status" value="Other" /> Other
+                </label>
+              </div>
+              <span class="field-error" id="err-employment_status"></span>
+            </div>
+            <div id="employer-fields">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="employer_name">Employer Name <span class="required">*</span></label>
+                  <input type="text" id="employer_name" placeholder="Acme Corporation" />
+                  <span class="field-error" id="err-employer_name"></span>
+                </div>
+                <div class="form-group">
+                  <label for="industry">Industry <span class="required">*</span></label>
+                  <select id="industry">
+                    <option value="">— Select industry —</option>
+                    <option>Agriculture</option>
+                    <option>Construction</option>
+                    <option>Education</option>
+                    <option>Finance &amp; Insurance</option>
+                    <option>Government</option>
+                    <option>Healthcare</option>
+                    <option>Hospitality</option>
+                    <option>Information Technology</option>
+                    <option>Legal</option>
+                    <option>Manufacturing</option>
+                    <option>Real Estate</option>
+                    <option>Retail</option>
+                    <option>Transportation &amp; Logistics</option>
+                    <option>Utilities</option>
+                    <option>Other</option>
+                  </select>
+                  <span class="field-error" id="err-industry"></span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="annual_income">Annual Income <span class="required">*</span></label>
+              <select id="annual_income">
+                <option value="">— Select range —</option>
+                <option>Under $25,000</option>
+                <option>$25,000 – $49,999</option>
+                <option>$50,000 – $74,999</option>
+                <option>$75,000 – $99,999</option>
+                <option>$100,000 – $149,999</option>
+                <option>$150,000 – $199,999</option>
+                <option>$200,000 or more</option>
+              </select>
+              <span class="field-error" id="err-annual_income"></span>
+            </div>
+          </div>
+
+          <!-- ===== SECTION D: Automobile Vehicle ===== -->
+          <div class="fieldset-group">
+            <div class="fieldset-group__label">
+              <span class="fieldset-icon">&#128663;</span>
+              Automobile Vehicle
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="vehicle_year">Vehicle Year <span class="required">*</span></label>
+                <select id="vehicle_year">
+                  <option value="">— Year —</option>
+                </select>
+                <span class="field-error" id="err-vehicle_year"></span>
+              </div>
+              <div class="form-group">
+                <label for="vehicle_make">Make <span class="required">*</span></label>
+                <input type="text" id="vehicle_make" placeholder="Toyota" />
+                <span class="field-error" id="err-vehicle_make"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="vehicle_model">Model <span class="required">*</span></label>
+                <input type="text" id="vehicle_model" placeholder="Camry" />
+                <span class="field-error" id="err-vehicle_model"></span>
+              </div>
+              <div class="form-group">
+                <label for="vin">VIN (optional)</label>
+                <input type="text" id="vin" placeholder="1HGBH41JXMN109186" maxlength="17" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="license_plate">License Plate <span class="required">*</span></label>
+                <input type="text" id="license_plate" placeholder="ABC-1234" />
+                <span class="field-error" id="err-license_plate"></span>
+              </div>
+              <div class="form-group">
+                <label for="annual_mileage">Annual Mileage <span class="required">*</span></label>
+                <select id="annual_mileage">
+                  <option value="">— Select range —</option>
+                  <option>Under 5,000 miles</option>
+                  <option>5,000 – 9,999 miles</option>
+                  <option>10,000 – 14,999 miles</option>
+                  <option>15,000 – 19,999 miles</option>
+                  <option>20,000 – 24,999 miles</option>
+                  <option>25,000 miles or more</option>
+                </select>
+                <span class="field-error" id="err-annual_mileage"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Primary Use <span class="required">*</span></label>
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input type="radio" name="primary_use" value="Personal" /> Personal
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="primary_use" value="Business" /> Business
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="primary_use" value="Both" /> Both
+                </label>
+              </div>
+              <span class="field-error" id="err-primary_use"></span>
+            </div>
+          </div>
+
+        </form>
+      </div><!-- /.step-body -->
+
+      <div class="step-footer">
+        <a href="index.html" class="btn btn--outline" style="color:var(--navy);border-color:var(--navy);">
+          &#8592; Back to Home
+        </a>
+        <button id="next-btn" class="btn btn--gold btn--lg">
+          Continue to Coverage &#8594;
+        </button>
+      </div>
+
+    </div><!-- /.step-container -->
+  </div><!-- /.step-wrap -->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__bottom container">
+      <p>&copy; 2024 Velantrix Insurance Corp. All rights reserved. &nbsp;|&nbsp;
+         <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+         <a href="#">Terms of Service</a> &nbsp;|&nbsp;
+         <em style="color:rgba(255,255,255,0.3)">Demo project only</em>
+      </p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+  <script>
+    'use strict';
+
+    /* ---- Populate vehicle year dropdown ---- */
+    const yearSelect = document.getElementById('vehicle_year');
+    const currentYear = new Date().getFullYear();
+    for (let y = currentYear; y >= 2000; y--) {
+      const opt = document.createElement('option');
+      opt.value = opt.textContent = y;
+      yearSelect.appendChild(opt);
+    }
+
+    /* ---- Employment status toggle ---- */
+    const employerFields = document.getElementById('employer-fields');
+    function updateEmployerFields() {
+      const selected = document.querySelector('input[name="employment_status"]:checked');
+      const showEmployer = selected && (selected.value === 'Employed' || selected.value === 'Self-Employed');
+      employerFields.style.display = showEmployer ? 'block' : 'none';
+    }
+    document.querySelectorAll('input[name="employment_status"]').forEach(r =>
+      r.addEventListener('change', updateEmployerFields)
+    );
+
+    /* ---- Phone number formatting ---- */
+    const phoneInput = document.getElementById('phone');
+    phoneInput.addEventListener('input', e => {
+      let v = e.target.value.replace(/\D/g, '').substring(0, 10);
+      if (v.length > 6) v = `(${v.slice(0,3)}) ${v.slice(3,6)}-${v.slice(6)}`;
+      else if (v.length > 3) v = `(${v.slice(0,3)}) ${v.slice(3)}`;
+      else if (v.length) v = `(${v}`;
+      e.target.value = v;
+    });
+
+    /* ---- Pre-fill from sessionStorage ---- */
+    (function prefill() {
+      const data = getQuoteData();
+      const textFields = ['full_name','dob','email','phone','street','city','zip',
+                          'employer_name','annual_income','vehicle_year','vehicle_make',
+                          'vehicle_model','vin','license_plate','annual_mileage','industry','state'];
+      textFields.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && data[id]) el.value = data[id];
+      });
+      // Radios
+      if (data.employment_status) {
+        const r = document.querySelector(`input[name="employment_status"][value="${data.employment_status}"]`);
+        if (r) { r.checked = true; updateEmployerFields(); }
+      }
+      if (data.primary_use) {
+        const r = document.querySelector(`input[name="primary_use"][value="${data.primary_use}"]`);
+        if (r) r.checked = true;
+      }
+    })();
+
+    /* ---- Next button ---- */
+    document.getElementById('next-btn').addEventListener('click', () => {
+      const empStatus = document.querySelector('input[name="employment_status"]:checked');
+      const primaryUse = document.querySelector('input[name="primary_use"]:checked');
+      const showEmployer = empStatus && (empStatus.value === 'Employed' || empStatus.value === 'Self-Employed');
+
+      // Clear all errors first
+      ['full_name','dob','email','phone','street','city','state','zip',
+       'employment_status','employer_name','industry','annual_income',
+       'vehicle_year','vehicle_make','vehicle_model','license_plate',
+       'annual_mileage','primary_use'].forEach(id => setError(id, 'err-' + id, ''));
+
+      let valid = true;
+
+      const req = (id, msg) => {
+        const v = document.getElementById(id)?.value.trim();
+        if (!v) { setError(id, 'err-' + id, msg); valid = false; }
+      };
+
+      req('full_name', 'Full name is required.');
+
+      // DOB: must be 18+
+      const dobEl = document.getElementById('dob');
+      if (!dobEl.value) {
+        setError('dob', 'err-dob', 'Date of birth is required.');
+        valid = false;
+      } else {
+        const dob = new Date(dobEl.value);
+        const minAge = new Date();
+        minAge.setFullYear(minAge.getFullYear() - 18);
+        if (dob > minAge) { setError('dob', 'err-dob', 'You must be at least 18 years old.'); valid = false; }
+      }
+
+      // Email
+      const emailVal = document.getElementById('email').value.trim();
+      if (!emailVal) { setError('email', 'err-email', 'Email is required.'); valid = false; }
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) { setError('email', 'err-email', 'Enter a valid email address.'); valid = false; }
+
+      // Phone
+      const phoneVal = document.getElementById('phone').value.replace(/\D/g, '');
+      if (phoneVal.length < 10) { setError('phone', 'err-phone', 'Enter a valid 10-digit phone number.'); valid = false; }
+
+      req('street',   'Street address is required.');
+      req('city',     'City is required.');
+      req('state',    'Please select a state.');
+
+      const zipVal = document.getElementById('zip').value.trim();
+      if (!/^\d{5}$/.test(zipVal)) { setError('zip', 'err-zip', 'Enter a valid 5-digit ZIP code.'); valid = false; }
+
+      if (!empStatus) { setError('employment_status', 'err-employment_status', 'Please select employment status.'); valid = false; }
+
+      if (showEmployer) {
+        req('employer_name', 'Employer name is required.');
+        req('industry',      'Please select an industry.');
+      }
+
+      req('annual_income',  'Please select your annual income range.');
+      req('vehicle_year',   'Please select the vehicle year.');
+      req('vehicle_make',   'Vehicle make is required.');
+      req('vehicle_model',  'Vehicle model is required.');
+      req('license_plate',  'License plate is required.');
+      req('annual_mileage', 'Please select annual mileage.');
+
+      if (!primaryUse) { setError('primary_use', 'err-primary_use', 'Please select primary use.'); valid = false; }
+
+      if (!valid) {
+        const firstErr = document.querySelector('.error');
+        if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Save to sessionStorage
+      saveQuoteData({
+        full_name:         document.getElementById('full_name').value.trim(),
+        dob:               document.getElementById('dob').value,
+        email:             document.getElementById('email').value.trim(),
+        phone:             document.getElementById('phone').value.trim(),
+        street:            document.getElementById('street').value.trim(),
+        city:              document.getElementById('city').value.trim(),
+        state:             document.getElementById('state').value,
+        zip:               document.getElementById('zip').value.trim(),
+        employment_status: empStatus.value,
+        employer_name:     document.getElementById('employer_name')?.value.trim() || '',
+        industry:          document.getElementById('industry')?.value || '',
+        annual_income:     document.getElementById('annual_income').value,
+        vehicle_year:      document.getElementById('vehicle_year').value,
+        vehicle_make:      document.getElementById('vehicle_make').value.trim(),
+        vehicle_model:     document.getElementById('vehicle_model').value.trim(),
+        vin:               document.getElementById('vin').value.trim(),
+        license_plate:     document.getElementById('license_plate').value.trim(),
+        annual_mileage:    document.getElementById('annual_mileage').value,
+        primary_use:       primaryUse.value,
+      });
+
+      window.location.href = 'coverage.html';
+    });
+  </script>
+</body>
+</html>

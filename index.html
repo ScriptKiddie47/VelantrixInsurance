@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velantrix Insurance — Auto Coverage for Business</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner container">
+      <a href="#hero" class="navbar__logo">
+        <span class="logo-mark">V</span>
+        Velantrix Insurance
+      </a>
+      <nav class="navbar__links" id="nav-menu">
+        <a href="#pricing">Plans</a>
+        <a href="#payment">Payment</a>
+        <a href="#claims">Claims</a>
+        <a href="policyholder.html" class="btn btn--gold">Get a Quote</a>
+      </nav>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content container">
+      <p class="hero__eyebrow fade-in">Trusted by 10,000+ businesses nationwide</p>
+      <h1 class="hero__headline fade-in">Drive With Confidence.<br />Insured With Velantrix.</h1>
+      <p class="hero__sub fade-in">Comprehensive commercial auto insurance tailored for businesses of every size. Protect your fleet, your drivers, and your bottom line.</p>
+      <div class="hero__actions fade-in">
+        <a href="policyholder.html" class="btn btn--gold btn--lg">Get a Quote</a>
+        <a href="#payment" class="btn btn--outline btn--lg">Learn More</a>
+      </div>
+      <div class="hero__stats fade-in">
+        <div class="stat">
+          <span class="stat__value">$2M+</span>
+          <span class="stat__label">Coverage Available</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__value">24/7</span>
+          <span class="stat__label">Claims Support</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__value">98%</span>
+          <span class="stat__label">Claim Approval Rate</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="pricing section" id="pricing">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-eyebrow">Coverage Plans</p>
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-sub">Choose the plan that fits your fleet. No hidden fees, no surprises.</p>
+      </div>
+
+      <div class="billing-toggle fade-in">
+        <span class="billing-label" id="label-monthly">Monthly</span>
+        <label class="toggle-switch" aria-label="Toggle billing period">
+          <input type="checkbox" id="billing-toggle" />
+          <span class="toggle-slider"></span>
+        </label>
+        <span class="billing-label" id="label-annual">Annual <span class="badge-save">Save 20%</span></span>
+      </div>
+
+      <div class="pricing__grid">
+
+        <!-- Basic -->
+        <div class="plan-card fade-in">
+          <div class="plan-card__header">
+            <h3 class="plan-name">Basic</h3>
+            <p class="plan-desc">Essential coverage for small fleets</p>
+          </div>
+          <div class="plan-card__price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-monthly="49" data-annual="39">49</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <p class="price-annual-note" id="annual-note-basic" style="display:none;">Billed as $470/year</p>
+          <ul class="plan-features">
+            <li><span class="check">&#10003;</span> Liability Coverage</li>
+            <li><span class="check">&#10003;</span> Roadside Assistance</li>
+            <li><span class="check">&#10003;</span> 24/7 Customer Support</li>
+            <li><span class="check">&#10003;</span> Up to 3 Vehicles</li>
+            <li class="disabled"><span class="cross">&#10007;</span> Collision Coverage</li>
+            <li class="disabled"><span class="cross">&#10007;</span> Rental Reimbursement</li>
+            <li class="disabled"><span class="cross">&#10007;</span> Comprehensive Coverage</li>
+          </ul>
+          <a href="policyholder.html" class="btn btn--outline btn--full">Choose Basic</a>
+        </div>
+
+        <!-- Standard (Recommended) -->
+        <div class="plan-card plan-card--featured fade-in">
+          <div class="plan-badge">Most Popular</div>
+          <div class="plan-card__header">
+            <h3 class="plan-name">Standard</h3>
+            <p class="plan-desc">Best value for growing businesses</p>
+          </div>
+          <div class="plan-card__price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-monthly="89" data-annual="71">89</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <p class="price-annual-note" id="annual-note-standard" style="display:none;">Billed as $854/year</p>
+          <ul class="plan-features">
+            <li><span class="check">&#10003;</span> Liability Coverage</li>
+            <li><span class="check">&#10003;</span> Roadside Assistance</li>
+            <li><span class="check">&#10003;</span> 24/7 Customer Support</li>
+            <li><span class="check">&#10003;</span> Up to 10 Vehicles</li>
+            <li><span class="check">&#10003;</span> Collision Coverage</li>
+            <li><span class="check">&#10003;</span> Rental Reimbursement</li>
+            <li class="disabled"><span class="cross">&#10007;</span> Comprehensive Coverage</li>
+          </ul>
+          <a href="policyholder.html" class="btn btn--gold btn--full">Choose Standard</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="plan-card fade-in">
+          <div class="plan-card__header">
+            <h3 class="plan-name">Premium</h3>
+            <p class="plan-desc">Full protection for enterprise fleets</p>
+          </div>
+          <div class="plan-card__price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-monthly="139" data-annual="111">139</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <p class="price-annual-note" id="annual-note-premium" style="display:none;">Billed as $1,334/year</p>
+          <ul class="plan-features">
+            <li><span class="check">&#10003;</span> Liability Coverage</li>
+            <li><span class="check">&#10003;</span> Roadside Assistance</li>
+            <li><span class="check">&#10003;</span> 24/7 Priority Support</li>
+            <li><span class="check">&#10003;</span> Unlimited Vehicles</li>
+            <li><span class="check">&#10003;</span> Collision Coverage</li>
+            <li><span class="check">&#10003;</span> Rental Reimbursement</li>
+            <li><span class="check">&#10003;</span> Comprehensive Coverage</li>
+          </ul>
+          <a href="policyholder.html" class="btn btn--outline btn--full">Choose Premium</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAYMENT ===== -->
+  <section class="payment section section--alt" id="payment">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-eyebrow">Billing & Payment</p>
+        <h2 class="section-title">Flexible Payment Options</h2>
+        <p class="section-sub">Pay your way. We accept all major payment methods with no processing fees.</p>
+      </div>
+
+      <div class="payment__methods fade-in">
+        <div class="method-card">
+          <div class="method-icon">&#128179;</div>
+          <h4>Credit / Debit Card</h4>
+          <p>Visa, Mastercard, Amex, Discover accepted</p>
+        </div>
+        <div class="method-card">
+          <div class="method-icon">&#127981;</div>
+          <h4>Bank Transfer (ACH)</h4>
+          <p>Direct debit from your business checking account</p>
+        </div>
+        <div class="method-card">
+          <div class="method-icon">&#128178;</div>
+          <h4>PayPal</h4>
+          <p>Pay securely via your PayPal business account</p>
+        </div>
+      </div>
+
+      <div class="payment__form-wrap fade-in">
+        <h3 class="form-section-title">Complete Your Payment</h3>
+        <p class="form-note">This is a demo form. No real transaction will be processed.</p>
+
+        <div class="frequency-selector">
+          <span class="freq-label">Billing Frequency:</span>
+          <div class="freq-options">
+            <label class="freq-option">
+              <input type="radio" name="frequency" value="monthly" checked /> Monthly
+            </label>
+            <label class="freq-option">
+              <input type="radio" name="frequency" value="quarterly" /> Quarterly
+            </label>
+            <label class="freq-option">
+              <input type="radio" name="frequency" value="annual" /> Annual
+            </label>
+          </div>
+        </div>
+
+        <form id="payment-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cardholder-name">Cardholder Name</label>
+              <input type="text" id="cardholder-name" placeholder="John Smith" autocomplete="cc-name" />
+              <span class="field-error" id="err-name"></span>
+            </div>
+            <div class="form-group">
+              <label for="company-name">Company Name</label>
+              <input type="text" id="company-name" placeholder="Acme Corp LLC" />
+              <span class="field-error" id="err-company"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number" />
+            <span class="field-error" id="err-card"></span>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="card-expiry">Expiry Date</label>
+              <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" autocomplete="cc-exp" />
+              <span class="field-error" id="err-expiry"></span>
+            </div>
+            <div class="form-group">
+              <label for="card-cvv">CVV</label>
+              <input type="text" id="card-cvv" placeholder="123" maxlength="4" autocomplete="cc-csc" />
+              <span class="field-error" id="err-cvv"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="billing-address">Billing Address</label>
+            <input type="text" id="billing-address" placeholder="123 Business Ave, Suite 100, New York, NY 10001" />
+            <span class="field-error" id="err-address"></span>
+          </div>
+          <button type="submit" class="btn btn--gold btn--lg btn--full">
+            Confirm Payment
+          </button>
+        </form>
+        <div class="form-success" id="payment-success" style="display:none;">
+          <span class="success-icon">&#10003;</span>
+          <strong>Payment Submitted!</strong> This is a demo — no actual charge was made.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CLAIMS ===== -->
+  <section class="claims section" id="claims">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-eyebrow">Claims Portal</p>
+        <h2 class="section-title">Report an Issue or File a Claim</h2>
+        <p class="section-sub">Our team reviews all claims within 24 hours. Provide as much detail as possible for faster processing.</p>
+      </div>
+
+      <div class="claims__layout fade-in">
+        <div class="claims__info">
+          <h3>What to Expect</h3>
+          <ol class="claims-steps">
+            <li>
+              <span class="step-num">1</span>
+              <div>
+                <strong>Submit Your Claim</strong>
+                <p>Fill out the form with incident details and upload any evidence.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">2</span>
+              <div>
+                <strong>Review & Assessment</strong>
+                <p>Our adjusters will review your claim within 24 business hours.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">3</span>
+              <div>
+                <strong>Resolution</strong>
+                <p>Receive your settlement or repair authorization within 5–7 business days.</p>
+              </div>
+            </li>
+          </ol>
+          <div class="claims-contact">
+            <p><strong>Emergency Claims Hotline</strong></p>
+            <p class="claims-phone">1-800-VEL-AUTO</p>
+            <p>Available 24/7 for urgent incidents</p>
+          </div>
+        </div>
+
+        <div class="claims__form-wrap">
+          <form id="claims-form" novalidate>
+            <div class="form-group">
+              <label for="policy-number">Policy Number <span class="required">*</span></label>
+              <input type="text" id="policy-number" placeholder="VEL-2024-XXXXXX" />
+              <span class="field-error" id="err-policy"></span>
+            </div>
+            <div class="form-group">
+              <label for="incident-date">Incident Date <span class="required">*</span></label>
+              <input type="date" id="incident-date" max="" />
+              <span class="field-error" id="err-date"></span>
+            </div>
+            <div class="form-group">
+              <label for="incident-type">Incident Type <span class="required">*</span></label>
+              <select id="incident-type">
+                <option value="">— Select incident type —</option>
+                <option value="collision">Collision</option>
+                <option value="theft">Theft / Break-In</option>
+                <option value="weather">Weather Damage</option>
+                <option value="vandalism">Vandalism</option>
+                <option value="fire">Fire Damage</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="field-error" id="err-type"></span>
+            </div>
+            <div class="form-group">
+              <label for="incident-desc">Description <span class="required">*</span></label>
+              <textarea id="incident-desc" rows="4" placeholder="Describe what happened, where, and any other relevant details..."></textarea>
+              <span class="field-error" id="err-desc"></span>
+            </div>
+            <div class="form-group">
+              <label for="evidence-upload">Upload Evidence (optional)</label>
+              <div class="file-upload-wrap">
+                <input type="file" id="evidence-upload" accept="image/*,.pdf" multiple />
+                <label for="evidence-upload" class="file-upload-label">
+                  <span class="file-icon">&#128206;</span>
+                  <span id="file-name-display">Click to upload photos or PDF documents</span>
+                </label>
+              </div>
+              <span class="field-hint">Accepted: JPG, PNG, GIF, PDF — Max 10MB each</span>
+            </div>
+            <button type="submit" class="btn btn--gold btn--lg btn--full">
+              Submit Claim
+            </button>
+          </form>
+          <div class="form-success" id="claims-success" style="display:none;">
+            <span class="success-icon">&#10003;</span>
+            <strong>Claim Submitted!</strong> Your claim ID is <strong>#VEL-<span id="claim-id"></span></strong>. You'll receive a confirmation email shortly.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__top container">
+      <div class="footer__brand">
+        <a href="#hero" class="navbar__logo">
+          <span class="logo-mark">V</span> Velantrix Insurance
+        </a>
+        <p>Protecting businesses and their fleets with comprehensive, affordable auto insurance since 2010.</p>
+        <p class="footer-disclaimer">* This is a dummy project for demonstration purposes only.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Coverage</h4>
+        <a href="#pricing">Basic Plan</a>
+        <a href="#pricing">Standard Plan</a>
+        <a href="#pricing">Premium Plan</a>
+      </div>
+      <div class="footer__links">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+      </div>
+      <div class="footer__links">
+        <h4>Support</h4>
+        <a href="#claims">File a Claim</a>
+        <a href="#payment">Billing</a>
+        <a href="#">FAQ</a>
+      </div>
+      <div class="footer__contact">
+        <h4>Contact</h4>
+        <p>&#128205; 200 Velantrix Plaza<br />New York, NY 10004</p>
+        <p>&#128222; 1-800-VEL-AUTO</p>
+        <p>&#128231; support@velantrix.com</p>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>&copy; 2024 Velantrix Insurance Corp. All rights reserved. &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a></p>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

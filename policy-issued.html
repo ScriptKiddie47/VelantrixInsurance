@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Policy Issued — Velantrix Insurance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="step-page">
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner container">
+      <a href="index.html" class="navbar__logo">
+        <span class="logo-mark">V</span>
+        Velantrix Insurance
+      </a>
+      <nav class="navbar__links" id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#pricing">Plans</a>
+        <a href="index.html#claims">Claims</a>
+      </nav>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- STEP PROGRESS -->
+  <div class="step-progress">
+    <ul class="step-progress__list">
+      <li class="step-item step-item--done">
+        <div class="step-dot">&#10003;</div>
+        <span class="step-label">Policyholder</span>
+      </li>
+      <li class="step-item step-item--done">
+        <div class="step-dot">&#10003;</div>
+        <span class="step-label">Coverage</span>
+      </li>
+      <li class="step-item step-item--done">
+        <div class="step-dot">&#10003;</div>
+        <span class="step-label">Premium &amp; Pay</span>
+      </li>
+      <li class="step-item step-item--active">
+        <div class="step-dot">4</div>
+        <span class="step-label">Policy Issued</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- STEP CONTENT -->
+  <div class="step-wrap">
+    <div class="step-container">
+
+      <!-- ===== POLICY ISSUED HERO ===== -->
+      <div class="policy-issued">
+        <div class="policy-checkmark">&#10003;</div>
+        <h1 class="policy-issued__headline">Your Policy is Active!</h1>
+        <p class="policy-issued__sub">
+          Congratulations — your auto insurance policy has been issued by Velantrix Insurance.
+        </p>
+        <div class="policy-number-badge" id="summary-policy-number">Loading…</div>
+
+        <!-- Policy Summary Card -->
+        <div class="policy-card">
+          <p class="policy-card__title">Policy Summary</p>
+          <div class="policy-grid">
+            <div>
+              <div class="policy-field__label">Policyholder</div>
+              <div class="policy-field__value" id="summary-name">—</div>
+            </div>
+            <div>
+              <div class="policy-field__label">Date of Birth</div>
+              <div class="policy-field__value" id="summary-dob">—</div>
+            </div>
+            <div>
+              <div class="policy-field__label">Email</div>
+              <div class="policy-field__value" id="summary-email">—</div>
+            </div>
+            <div>
+              <div class="policy-field__label">Vehicle</div>
+              <div class="policy-field__value" id="summary-vehicle">—</div>
+            </div>
+            <div>
+              <div class="policy-field__label">License Plate</div>
+              <div class="policy-field__value" id="summary-plate">—</div>
+            </div>
+            <div>
+              <div class="policy-field__label">Primary Use</div>
+              <div class="policy-field__value" id="summary-use">—</div>
+            </div>
+            <div>
+              <div class="policy-field__label">Effective Date</div>
+              <div class="policy-field__value" id="summary-effective">—</div>
+            </div>
+            <div>
+              <div class="policy-field__label">Expiry Date</div>
+              <div class="policy-field__value" id="summary-expiry">—</div>
+            </div>
+            <div>
+              <div class="policy-field__label">Payment Method</div>
+              <div class="policy-field__value" id="summary-payment-method">—</div>
+            </div>
+            <div>
+              <div class="policy-field__label">Monthly Premium</div>
+              <div class="policy-field__value" id="summary-premium" style="color:var(--gold-dark);font-size:1.1rem;">—</div>
+            </div>
+            <div style="grid-column: 1 / -1;">
+              <div class="policy-field__label">Active Coverages</div>
+              <div class="policy-coverages" id="summary-coverages">—</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="policy-issued__actions">
+          <button onclick="window.print()" class="btn btn--gold btn--lg">
+            &#128438; Print Policy
+          </button>
+          <button onclick="downloadPolicySummary()" class="btn btn--outline btn--lg">
+            &#11123; Download Summary
+          </button>
+          <a href="index.html" class="btn btn--outline btn--lg">
+            &#127968; Back to Home
+          </a>
+        </div>
+      </div><!-- /.policy-issued -->
+
+      <!-- ===== WHAT'S NEXT ===== -->
+      <div class="whats-next">
+        <h2 class="whats-next__title">What's Next?</h2>
+        <div class="whats-next__grid">
+          <div class="next-card">
+            <div class="next-card__icon">&#128242;</div>
+            <div class="next-card__title">Download the App</div>
+            <p class="next-card__desc">Manage your policy, file claims, and get roadside help — all in one place.</p>
+          </div>
+          <div class="next-card">
+            <div class="next-card__icon">&#128104;&#8205;&#128188;</div>
+            <div class="next-card__title">Contact Your Agent</div>
+            <p class="next-card__desc">Have questions? Your dedicated agent is ready to help. Call 1-800-VEL-AUTO.</p>
+          </div>
+          <div class="next-card">
+            <div class="next-card__icon">&#128663;</div>
+            <div class="next-card__title">Add Another Vehicle</div>
+            <p class="next-card__desc">Insure additional vehicles under your business policy and save with fleet discounts.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.step-container -->
+  </div><!-- /.step-wrap -->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__top container">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo">
+          <span class="logo-mark">V</span> Velantrix Insurance
+        </a>
+        <p>Protecting businesses and their fleets with comprehensive, affordable auto insurance since 2010.</p>
+        <p class="footer-disclaimer">* This is a dummy project for demonstration purposes only.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Coverage</h4>
+        <a href="index.html#pricing">Basic Plan</a>
+        <a href="index.html#pricing">Standard Plan</a>
+        <a href="index.html#pricing">Premium Plan</a>
+      </div>
+      <div class="footer__links">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+      </div>
+      <div class="footer__links">
+        <h4>Support</h4>
+        <a href="index.html#claims">File a Claim</a>
+        <a href="index.html#payment">Billing</a>
+        <a href="#">FAQ</a>
+      </div>
+      <div class="footer__contact">
+        <h4>Contact</h4>
+        <p>&#128205; 200 Velantrix Plaza<br />New York, NY 10004</p>
+        <p>&#128222; 1-800-VEL-AUTO</p>
+        <p>&#128231; support@velantrix.com</p>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>&copy; 2024 Velantrix Insurance Corp. All rights reserved. &nbsp;|&nbsp;
+         <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+         <a href="#">Terms of Service</a>
+      </p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+  <script>
+    'use strict';
+    // Populate policy summary from sessionStorage
+    renderPolicySummary();
+
+    // Also populate payment method
+    const data = getQuoteData();
+    const pmEl = document.getElementById('summary-payment-method');
+    if (pmEl) pmEl.textContent = data.payment_method || '—';
+
+    showToast('Policy issued successfully! 🎉');
+  </script>
+</body>
+</html>

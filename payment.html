@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium &amp; Payment — Velantrix Insurance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="step-page">
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner container">
+      <a href="index.html" class="navbar__logo">
+        <span class="logo-mark">V</span>
+        Velantrix Insurance
+      </a>
+      <nav class="navbar__links" id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#pricing">Plans</a>
+        <a href="index.html#claims">Claims</a>
+      </nav>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- STEP PROGRESS -->
+  <div class="step-progress">
+    <ul class="step-progress__list">
+      <li class="step-item step-item--done">
+        <div class="step-dot">&#10003;</div>
+        <span class="step-label">Policyholder</span>
+      </li>
+      <li class="step-item step-item--done">
+        <div class="step-dot">&#10003;</div>
+        <span class="step-label">Coverage</span>
+      </li>
+      <li class="step-item step-item--active">
+        <div class="step-dot">3</div>
+        <span class="step-label">Premium &amp; Pay</span>
+      </li>
+      <li class="step-item">
+        <div class="step-dot">4</div>
+        <span class="step-label">Policy Issued</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- STEP CONTENT -->
+  <div class="step-wrap">
+    <div class="step-container">
+
+      <div class="step-header">
+        <p class="section-eyebrow">Step 3 of 4</p>
+        <h1 class="section-title">Premium &amp; Payment</h1>
+      </div>
+
+      <div class="step-body">
+        <div class="step3-layout">
+
+          <!-- ===== LEFT: Premium Summary ===== -->
+          <div class="premium-summary">
+            <h3 class="premium-summary__title">Your Premium</h3>
+            <p class="premium-summary__vehicle" id="summary-vehicle-label">Loading vehicle info…</p>
+
+            <div id="premium-lines">
+              <!-- Populated by JS -->
+            </div>
+
+            <div class="premium-total">
+              <span class="premium-total__label">Total <span id="billing-label-inline">Monthly</span></span>
+              <span class="premium-total__amount" id="total-display">—</span>
+            </div>
+
+            <div class="premium-billing-toggle">
+              <button class="billing-pill active" data-period="monthly" id="pill-monthly">Monthly</button>
+              <button class="billing-pill" data-period="semiannual" id="pill-semiannual">Semi-Annual <small style="display:block;font-size:0.65rem;">Save 8%</small></button>
+              <button class="billing-pill" data-period="annual" id="pill-annual">Annual <small style="display:block;font-size:0.65rem;">Save 15%</small></button>
+            </div>
+
+            <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">
+              <p style="font-size:0.75rem;color:rgba(255,255,255,0.4);line-height:1.6;">
+                Premium is calculated based on your selected coverages, vehicle, and driving profile.
+                This is a demo — no real transaction occurs.
+              </p>
+            </div>
+          </div>
+
+          <!-- ===== RIGHT: Payment ===== -->
+          <div>
+            <div class="payment-tabs">
+              <button class="payment-tab active" id="tab-credit" data-type="credit">
+                &#128179; Credit Card
+              </button>
+              <button class="payment-tab" id="tab-debit" data-type="debit">
+                &#127963; Debit Card
+              </button>
+            </div>
+
+            <div class="card-type-icons">
+              Accepted:
+              <span class="card-type-badge">VISA</span>
+              <span class="card-type-badge">MC</span>
+              <span class="card-type-badge">AMEX</span>
+              <span class="card-type-badge">DISCOVER</span>
+            </div>
+
+            <p class="form-note" style="margin-bottom:20px;">
+              Demo form — no real payment is processed.
+            </p>
+
+            <form id="payment-step-form" novalidate>
+              <div class="form-group">
+                <label for="p-cardholder"><span id="card-type-label">Credit</span> Cardholder Name <span class="required">*</span></label>
+                <input type="text" id="p-cardholder" placeholder="Jane Smith" autocomplete="cc-name" />
+                <span class="field-error" id="perr-cardholder"></span>
+              </div>
+              <div class="form-group">
+                <label for="p-card-number">Card Number <span class="required">*</span></label>
+                <input type="text" id="p-card-number" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number" />
+                <span class="field-error" id="perr-card-number"></span>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="p-expiry">Expiry Date <span class="required">*</span></label>
+                  <input type="text" id="p-expiry" placeholder="MM/YY" maxlength="5" autocomplete="cc-exp" />
+                  <span class="field-error" id="perr-expiry"></span>
+                </div>
+                <div class="form-group">
+                  <label for="p-cvv">CVV <span class="required">*</span></label>
+                  <input type="text" id="p-cvv" placeholder="123" maxlength="4" autocomplete="cc-csc" />
+                  <span class="field-error" id="perr-cvv"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="p-billing-zip">Billing ZIP Code <span class="required">*</span></label>
+                <input type="text" id="p-billing-zip" placeholder="10001" maxlength="5" />
+                <span class="field-error" id="perr-billing-zip"></span>
+              </div>
+            </form>
+          </div>
+
+        </div><!-- /.step3-layout -->
+      </div><!-- /.step-body -->
+
+      <div class="step-footer">
+        <a href="coverage.html" class="btn btn--outline" style="color:var(--navy);border-color:var(--navy);">
+          &#8592; Back
+        </a>
+        <button id="confirm-btn" class="btn btn--gold btn--lg">
+          &#128274; Confirm &amp; Issue Policy
+        </button>
+      </div>
+
+    </div><!-- /.step-container -->
+  </div><!-- /.step-wrap -->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__bottom container">
+      <p>&copy; 2024 Velantrix Insurance Corp. All rights reserved. &nbsp;|&nbsp;
+         <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+         <a href="#">Terms of Service</a> &nbsp;|&nbsp;
+         <em style="color:rgba(255,255,255,0.3)">Demo project only</em>
+      </p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+  <script>
+    'use strict';
+
+    const data = getQuoteData();
+
+    /* ---- Populate vehicle label ---- */
+    const vehicleLabel = [data.vehicle_year, data.vehicle_make, data.vehicle_model].filter(Boolean).join(' ');
+    document.getElementById('summary-vehicle-label').textContent = vehicleLabel || 'No vehicle info';
+
+    /* ---- Build premium lines ---- */
+    let currentPeriod = 'monthly';
+    const basePremium = calculatePremium(data);
+
+    function renderPremium(period) {
+      currentPeriod = period;
+      const multiplier = period === 'semiannual' ? (6 * 0.92) : period === 'annual' ? (12 * 0.85) : 1;
+      const isMonth = period === 'monthly';
+      const suffix = isMonth ? '/mo' : period === 'semiannual' ? ' / 6 mo' : '/yr';
+
+      const linesEl = document.getElementById('premium-lines');
+      linesEl.innerHTML = '';
+
+      // Base line
+      const baseLine = document.createElement('div');
+      baseLine.className = 'premium-line';
+      baseLine.innerHTML = `
+        <span class="premium-line__label">Base Policy</span>
+        <span class="premium-line__value">$${Math.round(basePremium.base * multiplier)}${suffix}</span>
+      `;
+      linesEl.appendChild(baseLine);
+
+      basePremium.lines.forEach(line => {
+        const el = document.createElement('div');
+        el.className = 'premium-line';
+        el.innerHTML = `
+          <span class="premium-line__label">${line.label}</span>
+          <span class="premium-line__value">$${Math.round(line.amount * multiplier)}${suffix}</span>
+        `;
+        linesEl.appendChild(el);
+      });
+
+      const totalAmt = Math.round(basePremium.total * multiplier);
+      document.getElementById('total-display').textContent = `$${totalAmt}${suffix}`;
+      document.getElementById('billing-label-inline').textContent =
+        period === 'monthly' ? 'Monthly' : period === 'semiannual' ? 'Semi-Annual' : 'Annual';
+    }
+
+    renderPremium('monthly');
+
+    /* ---- Billing period pills ---- */
+    document.querySelectorAll('.billing-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.billing-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        renderPremium(pill.dataset.period);
+      });
+    });
+
+    /* ---- Payment method tabs ---- */
+    let activeCardType = 'credit';
+    document.querySelectorAll('.payment-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.payment-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        activeCardType = tab.dataset.type;
+        document.getElementById('card-type-label').textContent =
+          activeCardType === 'credit' ? 'Credit' : 'Debit';
+      });
+    });
+
+    /* ---- Card number formatting ---- */
+    const cardInput = document.getElementById('p-card-number');
+    cardInput.addEventListener('input', e => {
+      let v = e.target.value.replace(/\D/g, '').substring(0, 16);
+      v = v.replace(/(.{4})/g, '$1 ').trim();
+      e.target.value = v;
+    });
+
+    /* ---- Expiry auto-slash ---- */
+    const expiryInput = document.getElementById('p-expiry');
+    expiryInput.addEventListener('input', e => {
+      let v = e.target.value.replace(/\D/g, '').substring(0, 4);
+      if (v.length > 2) v = v.slice(0, 2) + '/' + v.slice(2);
+      e.target.value = v;
+    });
+
+    /* ---- Confirm & Issue ---- */
+    document.getElementById('confirm-btn').addEventListener('click', () => {
+      // Clear errors
+      ['cardholder','card-number','expiry','cvv','billing-zip'].forEach(id =>
+        setError('p-' + id, 'perr-' + id, '')
+      );
+
+      let valid = true;
+
+      const cardholder = document.getElementById('p-cardholder').value.trim();
+      const cardNum    = document.getElementById('p-card-number').value.trim();
+      const expiry     = document.getElementById('p-expiry').value.trim();
+      const cvv        = document.getElementById('p-cvv').value.trim();
+      const billingZip = document.getElementById('p-billing-zip').value.trim();
+
+      if (!cardholder) {
+        setError('p-cardholder', 'perr-cardholder', 'Cardholder name is required.');
+        valid = false;
+      }
+      if (!isValidCardNumber(cardNum)) {
+        setError('p-card-number', 'perr-card-number', 'Enter a valid 16-digit card number.');
+        valid = false;
+      }
+      if (!isValidExpiry(expiry)) {
+        setError('p-expiry', 'perr-expiry', 'Enter a valid expiry date (MM/YY).');
+        valid = false;
+      }
+      if (!/^\d{3,4}$/.test(cvv)) {
+        setError('p-cvv', 'perr-cvv', 'Enter a valid 3–4 digit CVV.');
+        valid = false;
+      }
+      if (!/^\d{5}$/.test(billingZip)) {
+        setError('p-billing-zip', 'perr-billing-zip', 'Enter a valid 5-digit ZIP code.');
+        valid = false;
+      }
+
+      if (!valid) {
+        const firstErr = document.querySelector('.error');
+        if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Save payment meta (never save actual card data)
+      saveQuoteData({
+        payment_method:  activeCardType === 'credit' ? 'Credit Card' : 'Debit Card',
+        billing_period:  currentPeriod,
+        monthly_premium: basePremium.total,
+        policy_number:   generatePolicyNumber(),
+      });
+
+      window.location.href = 'policy-issued.html';
+    });
+  </script>
+</body>
+</html>
